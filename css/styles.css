@@ -1,0 +1,392 @@
+/* home section */
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Navbar hides at the top and appears when scrolling */
+.hidden-navbar {
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Apply Animations */
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+    animation: fadeIn 1s ease-out forwards 0.5s;
+}
+
+.animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientAnimation 8s infinite ease-in-out;
+}
+
+.animate-bounce {
+    animation: bounce 1s infinite;
+}
+
+/* ABOUT SECTION */
+
+/* Home Section */
+#home {
+    position: relative;
+    min-height: 110vh;
+    /* Make it slightly longer */
+    overflow: hidden;
+}
+
+/* About Section Overlapping Home Section */
+#about {
+    position: relative;
+    min-height: 100vh;
+    margin-top: -12vh;
+    /* Pull About section slightly up */
+    padding-top: 100px;
+    /* More space for transition */
+    padding-bottom: 100px;
+    overflow: hidden;
+}
+
+/* Particle Background for About Section */
+#particleCanvasAbout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Keep it behind content */
+    filter: blur(8px);
+    /* Blurs the background only for About section */
+}
+
+/* Apply a blur effect when scrolling into About Section */
+#about::before {
+    content: "";
+    position: absolute;
+    top: -15vh;
+    /* Smoothly overlaps the Home section */
+    left: 0;
+    width: 100%;
+    height: 15vh;
+    /* Creates a smooth transition */
+    background: linear-gradient(to bottom, rgba(200, 230, 200, 1) 0%, rgba(200, 230, 200, 0) 100%);
+    z-index: 1;
+}
+
+/* About Section Content */
+#about h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1a3d1a;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+#about p {
+    font-size: 1.2rem;
+    color: #2d552d;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards 0.5s;
+    /* Delay for text fade-in */
+}
+
+/* About Image */
+#about img {
+    width: 250px;
+    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    padding-bottom: 0;
+    margin-bottom: -1px;
+}
+
+#about img:hover {
+    transform: scale(1.05);
+    /* Subtle zoom effect on hover */
+}
+
+/* Fade In Animation for Text */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply Parallax Scrolling Effect */
+@keyframes parallaxScroll {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.about-container {
+    animation: parallaxScroll 1.2s ease-out;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #about {
+        min-height: 110vh;
+        margin-top: -8vh;
+        text-align: center;
+    }
+
+    #about img {
+        width: 200px;
+    }
+
+    #about h2 {
+        font-size: 2rem;
+    }
+
+    #about p {
+        font-size: 1rem;
+    }
+}
+
+/* Code Block Styling */
+pre {
+    background-color: #1a1a1a;
+    /* Dark theme */
+    color: #00ff88;
+    /* Green text */
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 14px;
+    line-height: 1.5;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Code Text Colors */
+.text-blue-400 {
+    color: #3b82f6;
+}
+
+/* Keywords */
+.text-green-500 {
+    color: #10b981;
+}
+
+/* Strings */
+
+/* SKILLS SECTION */
+
+#skills {
+    width: 100vw;
+    /* Full width of viewport */
+
+    position: relative;
+    margin-top: -100px;
+    /* Adjust this value to control the overlap */
+    padding-top: 150px;
+    /* Push content down to balance the overlap */
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill-item:hover {
+    transform: scale(1.1);
+}
+
+#particleCanvasSkills {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(8px);
+    pointer-events: none;
+}
+
+/* PROJECTS SECTION */
+.project-card {
+    flex: 0 0 auto;
+    width: 400px;
+    height: 480px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.project-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.project-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.project-content h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0066cc;
+    margin-bottom: 6px;
+}
+
+.tag-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.project-content p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.project-content a {
+    display: block;
+    font-size: 14px;
+    color: #007b5e;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.project-content a:hover {
+    text-decoration: underline;
+}
+
+/* Hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#projects {
+    position: relative;
+    background: none;
+    /* Remove solid color to show particles */
+    overflow: hidden;
+    /* Prevent particles from overflowing */
+    margin-top: -100px;
+    /* Adjust this value to control the overlap */
+    padding-top: 150px;
+    /* Push content down to balance the overlap */
+}
+
+#particleCanvasProjects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Keeps it behind the content */
+    filter: blur(8px);
+    pointer-events: none;
+}
+
+/* CONTACT SECTION */
+#contact {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    margin-top: -80px;
+    /* Adjust this value to control the overlap */
+    padding-top: 150px;
+    /* Push content down to balance the overlap */
+}
+
+#particleCanvasContact {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Ensures particles stay behind content */
+    filter: blur(8px);
+    pointer-events: none;
+    /* Prevents interaction issues */
+}
