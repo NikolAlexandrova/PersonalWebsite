@@ -202,18 +202,18 @@
 }
 
 /* Code Block Styling */
-pre {
+/* pre {
     background-color: #1a1a1a;
-    /* Dark theme */
+   
     color: #00ff88;
-    /* Green text */
+
     padding: 16px;
     border-radius: 8px;
     overflow-x: auto;
     font-size: 14px;
     line-height: 1.5;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
+} */
 
 /* Code Text Colors */
 .text-blue-400 {
@@ -225,6 +225,50 @@ pre {
     color: #10b981;
 }
 
+/* Add padding to the text that you want to move to the right */
+/* Code block container */
+/* Code block container */
+#about pre {
+    max-height: 400px;  /* Set the maximum height for the code block */
+    overflow-y: auto;   /* Enable vertical scrolling */
+    padding: 15px;      /* Add padding inside the code block */
+    background-color: #1e1e1e; /* Dark background */
+    border-radius: 10px; /* Rounded corners for the code block */
+    font-size: 1.1rem;  /* Adjust the font size for better readability */
+    line-height: 1.6;   /* Improve readability by increasing line height */
+    font-family: 'Courier New', Courier, monospace;  /* Use a monospaced font for code */
+    white-space: pre-wrap; /* Preserve the whitespace and line breaks */
+    text-align: left; /* Align the text to the left */
+    margin:auto;
+    max-width: 100%
+}
+@media (max-width: 768px) {
+    #about pre {
+        width: 95%;  /* Increased width for mobile screens */
+        padding: 5px; /* Reduced padding for mobile */
+        width: 100%; /* Makes the width of the code block responsive */
+    }
+}
+
+/* Code styling */
+#about code {
+    color: #9CDCFE; /* Light blue text for the code */
+    word-wrap: break-word; /* Break long words */
+    display: block; /* Ensure code is displayed as a block */
+    white-space: pre-line; /* Preserve newlines but allow the text to wrap */
+    margin-left: 20px; /* This ensures the code is properly indented on mobile as well */
+    
+}
+
+#about pre code {
+    font-size: 1rem; /* Adjust the default font size */
+}
+
+@media (max-width: 768px) {
+    #about pre code {
+        font-size: 0.75rem; /* Smaller font size for phones */
+    }
+}
 /* Strings */
 
 /* SKILLS SECTION */
@@ -392,20 +436,20 @@ pre {
 }
 /* AI chatbot */
 /* Ensure the chat container is on top of all other elements */
-#chat-container {
+/* #chat-container {
     position: fixed;
-    bottom: 100px; /* Distance from the bottom */
-    right: 20px; /* Distance from the right */
-    width: 350px; /* Fixed width for the chatbox */
+    bottom: 100px; 
+    right: 20px; 
+    width: 350px;
     max-width: 100%;
-    background-color: #ffffff; /* White background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     border-radius: 10px;
-    z-index: 9999; /* Ensure it's on top of everything */
-    animation: slideIn 0.3s ease-in-out; /* Animation to slide in the chat window */
+    z-index: 9999; 
+    animation: slideIn 0.3s ease-in-out; 
 }
 
-/* Animation for smooth appearance */
+
 @keyframes slideIn {
     from {
         transform: translateX(100%);
@@ -415,9 +459,9 @@ pre {
     }
 }
 
-/* Chat header styling */
+
 #chat-container .chat-header {
-    background-color: #4CAF50; /* Green header */
+    background-color: #4CAF50;
     color: white;
     padding: 10px;
     font-size: 1.2rem;
@@ -426,7 +470,7 @@ pre {
     border-top-right-radius: 10px;
 }
 
-/* Ensure messages appear vertically and the chatbox behaves as expected */
+
 #chat-messages {
     padding: 15px;
     height: 300px;
@@ -435,15 +479,15 @@ pre {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     display: flex;
-    flex-direction: column; /* Stack messages vertically */
+    flex-direction: column;
 }
 
-/* User message (aligned to the right) */
+
 .text-right {
     text-align: right;
-    margin-bottom: 10px; /* Space between messages */
+    margin-bottom: 10px;
     display: flex;
-    justify-content: flex-end; /* Align to the right */
+    justify-content: flex-end;
 }
 
 .text-right .bg-green-300 {
@@ -453,12 +497,12 @@ pre {
     border-radius: 10px;
 }
 
-/* Bot message (aligned to the left) */
+
 .text-left {
     text-align: left;
-    margin-bottom: 10px; /* Space between messages */
+    margin-bottom: 10px;
     display: flex;
-    justify-content: flex-start; /* Align to the left */
+    justify-content: flex-start;
 }
 
 .text-left .bg-gray-200 {
@@ -469,7 +513,7 @@ pre {
 }
 
 
-/* Chat input field */
+
 #chat-input {
     width: 90%;
     padding: 10px;
@@ -480,7 +524,7 @@ pre {
     display: block;
 }
 
-/* Send button styling */
+
 #send-btn {
     background-color: #4CAF50;
     color: white;
@@ -495,28 +539,28 @@ pre {
 }
 
 #send-btn:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #45a049; 
 }
 
-/* User message */
+
 .text-right {
     text-align: right;
 }
 
 .text-right .bg-green-300 {
-    background-color: #e0f7fa; /* Light green background */
+    background-color: #e0f7fa; 
 }
 
-/* Bot message */
+
 .text-left {
     text-align: left;
 }
 
 .text-left .bg-gray-200 {
-    background-color: #f1f1f1; /* Light gray background */
+    background-color: #f1f1f1; 
 }
 
-/* Chat toggle button */
+
 #chat-toggle {
     position: fixed;
     bottom: 30px;
@@ -527,17 +571,17 @@ pre {
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     font-size: 1.5rem;
-    z-index: 9999; /* Ensure it's on top of everything */
+    z-index: 9999; 
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 #chat-toggle:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #45a049; 
 }
 
-/* Typing indicator */
+
 .bg-gray-200 {
-    background-color: #f1f1f1; /* Light gray background for bot messages */
+    background-color: #f1f1f1; 
     font-style: italic;
-}
+} */

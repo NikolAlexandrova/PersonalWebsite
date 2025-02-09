@@ -61,13 +61,13 @@
 
             <!-- Tagline -->
             <p id="tagline" class="text-base md:text-lg text-gray-800 opacity-0 animate-fade-in-delay mt-2">
-                Innovator 🚀 | Problem Solver 💡 | Developer 💻
+                Innovator 🚀 | Problem Solver 💡 | Code Enthusiast 💻
             </p>
 
             <p id="description"
                 class="text-lg md:text-xl mt-4 opacity-0 animate-fade-in-delay text-gray-900 leading-relaxed">
-                A passionate <span class="font-semibold">developer</span>, tech enthusiast, and problem solver.<br>
-                I build <span class="font-semibold text-green-700">innovative solutions</span> that make an impact.
+                A curious <span class="font-semibold">developer</span>, always exploring new ideas and technologies.
+                I create <span class="font-semibold text-green-700">meaningful solutions</span> that leave a lasting impact.
             </p>
 
             <!-- Social Media Icons -->
@@ -103,29 +103,23 @@
         </div>
 
         <!-- Chatbot Button -->
-        <button id="chat-toggle" class="fixed bottom-6 right-6 bg-green-700 text-white p-4 rounded-full shadow-lg hover:bg-green-800 transition">
+        <!-- <button id="chat-toggle" class="fixed bottom-6 right-6 bg-green-700 text-white p-4 rounded-full shadow-lg hover:bg-green-800 transition">
             💬 Chat
-        </button>
+        </button> -->
         
         <!-- Chatbox -->
-        <div id="chat-container" class="hidden">
+        <!-- <div id="chat-container" class="hidden">
             <div class="chat-header">
                 Nikol's AI Chat
             </div>
             <div class="chat-body" id="chat-messages">
-                <!-- Chat messages will appear here -->
             </div>
             <input type="text" id="chat-input" placeholder="Ask me anything..." />
             <button id="send-btn">
                 <i class="fas fa-paper-plane"></i> Send
             </button>
-        </div>
+        </div> -->
         
-        
-        
-
-
-
         <!-- Scroll Down Indicator -->
         <div class="absolute bottom-4 md:bottom-16 lg:bottom-20 left-1/2 transform -translate-x-1/2 z-30">
             <a href="#about" class="text-green-800 flex flex-col items-center animate-bounce">
@@ -148,33 +142,43 @@
         <h2 class="text-4xl font-bold text-green-800 mb-8 z-10">About Me</h2>
 
         <!-- Extra Wide Code Block -->
-        <div
-            class="relative z-10 bg-gray-900 text-green-400 p-8 rounded-lg shadow-lg w-[90%] md:w-[80%] lg:w-[75%] xl:w-[70%] max-w-none">
+        <div class="relative z-10 bg-gray-900 text-green-400 p-4 rounded-lg shadow-lg w-[90%] md:w-[80%] lg:w-[75%] xl:w-[70%] max-w-none">
             <pre class="text-sm font-mono leading-relaxed text-left whitespace-pre-wrap overflow-x-auto">
-            <code>
-                <span class="text-blue-400">public class</span> AboutMe {
-                
-                    <span class="text-blue-400">private String</span> status = <span class="text-green-500">"Booting up..."</span>;
-                    <span class="text-blue-400">private String[]</span> hobbies = {<span class="text-green-500">"Krav Maga"</span>, <span class="text-green-500">"Hiking"</span>, <span class="text-green-500">"Photography"</span>};
-                
-                    <span class="text-blue-400">public void</span> startSystem() {
-                        System.out.println(<span class="text-green-500">"System Status: "</span> + status);
-                        System.out.println(<span class="text-green-500">"\nActivating hobbies..."</span>);
-                        <span class="text-blue-400">for</span> (String hobby : hobbies) {
-                            System.out.println(<span class="text-green-500">"★ "</span> + hobby);
-                        }
-                        System.out.println(<span class="text-green-500">"\nSystem Ready. Awaiting new challenges..."</span>);
+                <code>
+                    <span class="text-blue-400">public class</span> AboutMe {
+        
+                        <span class="text-blue-400">&nbsp;private String</span> status = <span class="text-green-500">"Booting up..."</span>;
+                        <span class="text-blue-400">&nbsp;private String[]</span> hobbies = { 
+                            <span class="text-green-500">&nbsp;"DIY projects"</span>, 
+                            <span class="text-green-500">&nbsp;"Reading"</span>, 
+                            <span class="text-green-500">&nbsp;"Traveling"</span> 
+                            &nbsp;};
+        
+                        <span class="text-blue-400">&nbsp;private String</span> about = 
+                        <span class="text-green-500">&nbsp;"I’m someone who thrives on curiosity – always eager to learn and &nbsp;explore what’s next. Whether it’s a new hobby, an interesting book, or &nbsp;a challenge that makes me think differently, I’m constantly seeking to &nbsp;grow and experience new things. Coding is just one of the many ways I &nbsp;express this curiosity, as it lets me bring ideas to life and solve &nbsp;problems in creative ways. But above all, I believe life is about &nbsp;exploring, discovering, and having fun with the journey."</span>;
+        
+                        <span class="text-blue-400">&nbsp;public void</span> startSystem() {
+                            &nbsp;System.out.println(<span class="text-green-500">"System Status: "</span> + status);
+                            &nbsp;System.out.println(<span class="text-green-500">"\nActivating hobbies..."</span>);
+        
+                            <span class="text-blue-400">&nbsp;for</span> (String hobby : hobbies) {
+                                &nbsp;System.out.println(<span class="text-green-500">"★ "</span> + hobby);
+                                &nbsp;}
+        
+                                &nbsp;System.out.println(<span class="text-green-500">"\nSystem Ready. Awaiting new challenges..."</span>);
+                                &nbsp;System.out.println(<span class="text-green-500">"\nAbout Me: "</span> + about);
+                            &nbsp;}
+        
+                        <span class="text-blue-400">public static void</span> main(String[] args) {
+                            &nbsp;AboutMe nikol = <span class="text-blue-400">new</span> AboutMe();
+                            &nbsp;nikol.startSystem();
+                            &nbsp;}
                     }
-                
-                    <span class="text-blue-400">public static void</span> main(String[] args) {
-                        AboutMe nikol = <span class="text-blue-400">new</span> AboutMe();
-                        nikol.startSystem();
-                    }
-                }
                 </code>
-                
-        </pre>
+            </pre>
         </div>
+        
+        
         <div
             class="absolute bottom-[-20px] md:bottom-[-10px] lg:bottom-0 xl:bottom-4 left-1/2 transform -translate-x-1/2 z-10">
             <a href="#skills" class="text-green-800 flex flex-col items-center animate-bounce">
@@ -247,7 +251,7 @@
         </div>
         <div
             class="absolute bottom-[-20px] md:bottom-[-20px] lg:bottom-0 xl:bottom-4 left-1/2 transform -translate-x-1/2 z-10">
-            <a href="#skills" class="text-green-800 flex flex-col items-center animate-bounce">
+            <a href="#projects" class="text-green-800 flex flex-col items-center animate-bounce">
                 <span class="text-sm md:text-lg font-semibold">My Projects</span>
                 <i class="fas fa-chevron-down text-xl md:text-2xl mt-2"></i>
             </a>
@@ -282,7 +286,7 @@
                             <div class="tag">🌱 Sustainability</div>
                             <p>Foodsaver is a platform that helps young adults reduce food waste by tracking leftovers
                                 and discovering recipes based on available ingredients.</p>
-                            <a href="#">View Project →</a>
+                            <a href="https://github.com/HZ-HBOICT-Y2-2425/uvc-project-frontend-team-10-foodsaver">View Project →</a>
                         </div>
                     </div>
 
@@ -295,7 +299,7 @@
                             <p>Hello World is a dynamic student organization website that provides event updates,
                                 membership management, and resources to support the tech community at the university.
                             </p>
-                            <a href="#">View Project →</a>
+                            <a href="https://github.com/NikolAlexandrova/SAHelloWorld">View Project →</a>
                         </div>
                     </div>
 
@@ -307,7 +311,7 @@
                             <div class="tag">👮‍♂️ Security Services</div>
                             <p>A professional security website showcasing the company's services, expertise, and
                                 commitment to safety.</p>
-                            <a href="#">View Project →</a>
+                            <a href="https://github.com/NikolAlexandrova/security">View Project →</a>
                         </div>
                     </div>
 
@@ -319,7 +323,7 @@
                             <div class="tag">🛸 Educational Tech</div>
                             <p>A fun and educational game where Tetra, the main character, guides kids through
                                 interactive challenges to learn fundamental programming concepts.</p>
-                            <a href="#">View Project →</a>
+                            <a href="https://github.com/HZ-ICT-2324/oop-team02">View Project →</a>
                         </div>
                     </div>
 
@@ -331,7 +335,7 @@
                             <div class="tag">🤝 IB Coordination</div>
                             <p>A streamlined CAS management application designed to assist IB diploma CAS coordinators
                                 in tracking student activities, reflections, and progress efficiently.</p>
-                            <a href="#">View Project →</a>
+                            <a href="https://github.com/NikolAlexandrova/CAS">View Project →</a>
                         </div>
                     </div>
 
@@ -347,7 +351,7 @@
         </div>
         <div
             class="absolute bottom-[-10px] md:bottom-[-20px] lg:bottom-0 xl:bottom-4 left-1/2 transform -translate-x-1/2 z-10">
-            <a href="#skills" class="text-green-800 flex flex-col items-center animate-bounce">
+            <a href="#contact" class="text-green-800 flex flex-col items-center animate-bounce">
                 <span class="text-sm md:text-lg font-semibold">Contact Me</span>
                 <i class="fas fa-chevron-down text-xl md:text-2xl mt-2"></i>
             </a>

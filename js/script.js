@@ -260,132 +260,132 @@ document.addEventListener("DOMContentLoaded", function () {
 // AI Chatbot
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const chatToggle = document.getElementById("chat-toggle");
-    const chatContainer = document.getElementById("chat-container");
-    const chatMessages = document.getElementById("chat-messages");
-    const chatInput = document.getElementById("chat-input");
-    const sendBtn = document.getElementById("send-btn");
+// document.addEventListener("DOMContentLoaded", function () {
+//     const chatToggle = document.getElementById("chat-toggle");
+//     const chatContainer = document.getElementById("chat-container");
+//     const chatMessages = document.getElementById("chat-messages");
+//     const chatInput = document.getElementById("chat-input");
+//     const sendBtn = document.getElementById("send-btn");
 
-    // Toggle chatbox visibility
-    chatToggle.addEventListener("click", () => {
-        chatContainer.classList.toggle("hidden");
+    
+//     chatToggle.addEventListener("click", () => {
+//         chatContainer.classList.toggle("hidden");
 
-        // Show the prewritten message when chat is opened
-        if (!chatContainer.classList.contains("hidden") && chatMessages.children.length === 0) {
-            chatMessages.innerHTML += `<div class="text-left"><span class="bg-gray-200 p-2 rounded-lg">You can ask me about Nikol's career plans, motivation, availability, education, or what she finds fun!</span></div>`;
-        }
-    });
+       
+//         if (!chatContainer.classList.contains("hidden") && chatMessages.children.length === 0) {
+//             chatMessages.innerHTML += `<div class="text-left"><span class="bg-gray-200 p-2 rounded-lg">You can ask me about Nikol's career plans, motivation, availability, education, or what she finds fun!</span></div>`;
+//         }
+//     });
 
-    // Send message when the button is clicked
-    sendBtn.addEventListener("click", async () => {
-        const userMessage = chatInput.value.trim();
-        if (!userMessage) return;
 
-        // Display user message
-        chatMessages.innerHTML += `<div class="text-right"><span class="bg-green-300 p-2 rounded-lg">${userMessage}</span></div>`;
-        chatInput.value = "";
+//     sendBtn.addEventListener("click", async () => {
+//         const userMessage = chatInput.value.trim();
+//         if (!userMessage) return;
 
-        // Display typing animation for the bot
-        const botTypingMessage = `<div class="text-left"><span class="bg-gray-200 p-2 rounded-lg">...</span></div>`;
-        chatMessages.innerHTML += botTypingMessage;
 
-        // Scroll to bottom
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+//         chatMessages.innerHTML += `<div class="text-right"><span class="bg-green-300 p-2 rounded-lg">${userMessage}</span></div>`;
+//         chatInput.value = "";
 
-        // Get AI response
-        const botResponse = await fetchChatbotResponse(userMessage);
+     
+//         const botTypingMessage = `<div class="text-left"><span class="bg-gray-200 p-2 rounded-lg">...</span></div>`;
+//         chatMessages.innerHTML += botTypingMessage;
 
-        // Remove the typing message and display the real response with typing animation
-        const botMessage = document.querySelector(".bg-gray-200");
-        if (botMessage) botMessage.remove(); // Remove typing message
+   
+//         chatMessages.scrollTop = chatMessages.scrollHeight;
 
-        // Display the bot's response with a typing effect
-        typeBotResponse(botResponse);
-    });
+      
+//         const botResponse = await fetchChatbotResponse(userMessage);
 
-    // Send message when "Enter" key is pressed
-    chatInput.addEventListener("keydown", async (event) => {
-        if (event.key === "Enter") {
-            event.preventDefault(); // Prevent form submission if any
-            sendBtn.click(); // Trigger the send button click action
-        }
-    });
+      
+//         const botMessage = document.querySelector(".bg-gray-200");
+//         if (botMessage) botMessage.remove();
+
+       
+//         typeBotResponse(botResponse);
+//     });
+
+   
+//     chatInput.addEventListener("keydown", async (event) => {
+//         if (event.key === "Enter") {
+//             event.preventDefault(); 
+//             sendBtn.click(); 
+//         }
+//     });
 
     // Function to simulate typing effect for bot's response
-    async function typeBotResponse(response) {
-        let index = 0;
-        const botMessageDiv = document.createElement("div");
-        botMessageDiv.classList.add("text-left");
-        const botMessageSpan = document.createElement("span");
-        botMessageSpan.classList.add("bg-gray-200", "p-2", "rounded-lg");
-        botMessageDiv.appendChild(botMessageSpan);
-        chatMessages.appendChild(botMessageDiv);
+    // async function typeBotResponse(response) {
+    //     let index = 0;
+    //     const botMessageDiv = document.createElement("div");
+    //     botMessageDiv.classList.add("text-left");
+    //     const botMessageSpan = document.createElement("span");
+    //     botMessageSpan.classList.add("bg-gray-200", "p-2", "rounded-lg");
+    //     botMessageDiv.appendChild(botMessageSpan);
+    //     chatMessages.appendChild(botMessageDiv);
 
-        // Typing effect simulation
-        const typingInterval = setInterval(() => {
-            botMessageSpan.textContent += response.charAt(index);
-            index++;
-            if (index === response.length) {
-                clearInterval(typingInterval);
-            }
-        }, 100); // Adjust the typing speed here (in ms)
-    }
+    //     // Typing effect simulation
+    //     const typingInterval = setInterval(() => {
+    //         botMessageSpan.textContent += response.charAt(index);
+    //         index++;
+    //         if (index === response.length) {
+    //             clearInterval(typingInterval);
+    //         }
+    //     }, 100);
+    // }
 
     // Function to get chatbot response
-    async function fetchChatbotResponse(message) {
-        const apiKey = "your-api-key-here"; // Replace with your API key
+//     async function fetchChatbotResponse(message) {
+//         const apiKey = "your-api-key-here"; 
 
-        // Predefined responses
-        if (message.toLowerCase().includes("fun") || message.toLowerCase().includes("hobbies")) {
-            return "Nikol's hobbies include Krav Maga, Hiking, and Photography.";
-        }
+//         // Predefined responses
+//         if (message.toLowerCase().includes("fun") || message.toLowerCase().includes("hobbies")) {
+//             return "Nikol's hobbies include Krav Maga, Hiking, and Photography.";
+//         }
 
-        if (message.toLowerCase().includes("languages") || message.toLowerCase().includes("skills")) {
-            return "Nikol's skills include Java, Svelte, Docker, Laravel, JavaScript, SQL, and more!";
-        }
+//         if (message.toLowerCase().includes("languages") || message.toLowerCase().includes("skills")) {
+//             return "Nikol's skills include Java, Svelte, Docker, Laravel, JavaScript, SQL, and more!";
+//         }
 
-        if (message.toLowerCase().includes("about") || message.toLowerCase().includes("who is") || message.toLowerCase().includes("Nikol") || message.toLowerCase().includes("Nicole")) {
-            return "Nikol Alexandrova is a passionate developer, tech enthusiast, and problem solver. She builds innovative solutions with technologies like JavaScript, React, and Node.js.";
-        }
+//         if (message.toLowerCase().includes("about") || message.toLowerCase().includes("who is") || message.toLowerCase().includes("Nikol") || message.toLowerCase().includes("Nicole")) {
+//             return "Nikol Alexandrova is a passionate developer, tech enthusiast, and problem solver. She builds innovative solutions with technologies like JavaScript, React, and Node.js.";
+//         }
 
-        if (message.toLowerCase().includes("projects") || message.toLowerCase().includes("work")) {
-            return "Nikol has worked on various projects including a Food Saver app, a student organization website, and a security services chatbot.";
-        }
+//         if (message.toLowerCase().includes("projects") || message.toLowerCase().includes("work")) {
+//             return "Nikol has worked on various projects including a Food Saver app, a student organization website, and a security services chatbot.";
+//         }
 
-        if (message.toLowerCase().includes("contact") || message.toLowerCase().includes("reach")) {
-            return "You can contact Nikol via email at n1kol1vay@gmail.com or through LinkedIn and GitHub!";
-        }
+//         if (message.toLowerCase().includes("contact") || message.toLowerCase().includes("reach")) {
+//             return "You can contact Nikol via email at n1kol1vay@gmail.com or through LinkedIn and GitHub!";
+//         }
         
-        if (message.toLowerCase().includes("improve") || message.toLowerCase().includes("tips")) {
-            return "To improve your coding skills, practice regularly, work on real-world projects, and always keep learning from others!";
-        }
+//         if (message.toLowerCase().includes("improve") || message.toLowerCase().includes("tips")) {
+//             return "To improve your coding skills, practice regularly, work on real-world projects, and always keep learning from others!";
+//         }
 
-        if (message.toLowerCase().includes("career") || message.toLowerCase().includes("motivation")) {
-            return "Nikol aims to solve real-world problems with innovative technology, build impactful solutions, and contribute to open-source communities.";
-        }
+//         if (message.toLowerCase().includes("career") || message.toLowerCase().includes("motivation")) {
+//             return "Nikol aims to solve real-world problems with innovative technology, build impactful solutions, and contribute to open-source communities.";
+//         }
              
-        if (message.toLowerCase().includes("available") || message.toLowerCase().includes("work") || message.toLowerCase().includes("availability")) {
-            return "Nikol is currently open to new opportunities and freelance projects! Feel free to reach out via email or LinkedIn.";
-        }
+//         if (message.toLowerCase().includes("available") || message.toLowerCase().includes("work") || message.toLowerCase().includes("availability")) {
+//             return "Nikol is currently open to new opportunities and freelance projects! Feel free to reach out via email or LinkedIn.";
+//         }
 
-        if (message.toLowerCase().includes("study") || message.toLowerCase().includes("education")) {
-            return "Nikol studied Information and Communication Technology at HZ University of Applied Sciences and earned a propedeuse certificate.";
-        }
-        // Fetch AI response if no predefined answers match
-        const response = await fetch("https://api.openai.com/v1/chat/completions", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${apiKey}`
-            },
-            body: JSON.stringify({
-                model: "gpt-3.5-turbo",
-                messages: [{ role: "user", content: message }]
-            })
-        });
+//         if (message.toLowerCase().includes("study") || message.toLowerCase().includes("education")) {
+//             return "Nikol studied Information and Communication Technology at HZ University of Applied Sciences and earned a propedeuse certificate.";
+//         }
+        
+//         const response = await fetch("https://api.openai.com/v1/chat/completions", {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json",
+//                 "Authorization": `Bearer ${apiKey}`
+//             },
+//             body: JSON.stringify({
+//                 model: "gpt-3.5-turbo",
+//                 messages: [{ role: "user", content: message }]
+//             })
+//         });
 
-        const data = await response.json();
-        return data.choices?.[0]?.message?.content || "Sorry, I couldn't process that.";
-    }
-});
+//         const data = await response.json();
+//         return data.choices?.[0]?.message?.content || "Sorry, I couldn't process that.";
+//     }
+//  });
