@@ -390,3 +390,154 @@ pre {
     pointer-events: none;
     /* Prevents interaction issues */
 }
+/* AI chatbot */
+/* Ensure the chat container is on top of all other elements */
+#chat-container {
+    position: fixed;
+    bottom: 100px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    width: 350px; /* Fixed width for the chatbox */
+    max-width: 100%;
+    background-color: #ffffff; /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 10px;
+    z-index: 9999; /* Ensure it's on top of everything */
+    animation: slideIn 0.3s ease-in-out; /* Animation to slide in the chat window */
+}
+
+/* Animation for smooth appearance */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Chat header styling */
+#chat-container .chat-header {
+    background-color: #4CAF50; /* Green header */
+    color: white;
+    padding: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Ensure messages appear vertically and the chatbox behaves as expected */
+#chat-messages {
+    padding: 15px;
+    height: 300px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column; /* Stack messages vertically */
+}
+
+/* User message (aligned to the right) */
+.text-right {
+    text-align: right;
+    margin-bottom: 10px; /* Space between messages */
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+}
+
+.text-right .bg-green-300 {
+    background-color: #e0f7fa;
+    max-width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Bot message (aligned to the left) */
+.text-left {
+    text-align: left;
+    margin-bottom: 10px; /* Space between messages */
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+}
+
+.text-left .bg-gray-200 {
+    background-color: #f1f1f1;
+    max-width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+/* Chat input field */
+#chat-input {
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin: 10px auto;
+    font-size: 1rem;
+    display: block;
+}
+
+/* Send button styling */
+#send-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px auto;
+    display: block;
+}
+
+#send-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* User message */
+.text-right {
+    text-align: right;
+}
+
+.text-right .bg-green-300 {
+    background-color: #e0f7fa; /* Light green background */
+}
+
+/* Bot message */
+.text-left {
+    text-align: left;
+}
+
+.text-left .bg-gray-200 {
+    background-color: #f1f1f1; /* Light gray background */
+}
+
+/* Chat toggle button */
+#chat-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
+    z-index: 9999; /* Ensure it's on top of everything */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#chat-toggle:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Typing indicator */
+.bg-gray-200 {
+    background-color: #f1f1f1; /* Light gray background for bot messages */
+    font-style: italic;
+}
